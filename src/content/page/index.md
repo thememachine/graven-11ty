@@ -1,13 +1,13 @@
 ---
-title: Saga 11
+title: Graven Tattoo
 url: /
-image: https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=3570&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+image: ""
 components:
   - type: collection
     order: data.order
     size: 3
     template: components/collection/collection.liquid
-    collection: saga11
+    collection: graven
 card:
   title: "This is the frontpage card "
   image: ""
@@ -22,7 +22,7 @@ eleventyNavigation:
   order: 0
   key: main
 opengraph:
-  image: /content/upload/4hundo.gif
+  image: ""
   title: "This is open graph "
   description: "This is OG description "
 layout: page/frontpage.liquid
@@ -33,16 +33,18 @@ seo:
   title: This is the Seo title
   description: This is the desription used for meta tags yo
 ---
-😍 it works {tm}
+As Above – So Below
 
-👉 To make the admin work clone the env.example to .env
+In the depths of Vesterbro, located near nature wine bars, micro-breweries, vintage clothing shops and everything else that represents the modern culture of Copenhagen living, Graven is situated underneath the cobblestones of a great old city. Here you will find oddities, skulls of various species, limbs and teeth, bones and artifacts. In the little dungeon you will also stumble upon local
+record shop recommendations of what’s trending in the Danish underground metal scene, enjoy a beer from a local brewery and hanging out in the foresty lounge before you venture into your new tattoo.
 
-🤖 go to the [admin interface admin](/admin)
+The experience of getting a tattoo is also, for us, about your surroundings, the vibe and the general atmosphere. We strive to make you have a good time in our company, because we believe life is way more fun that way. Graven includes everyone and is for everyone. In the dungeon there’s no one above and no one below. We are all equal and everyone working in Graven share the same passion
+and vision about a world that’s safe and loving, caring and hate free, full of heavy metal and good people.
+ 
 
-💅 Themes are in /src/themes/
+Graven has chosen a clear path towards a common goal.
 
-📜 content is in /src/content/
+For both you and us.
 
-🎈 saga11 is build on top of [11ty](https://11ty.dev) & [NetlifyCMS](https://netlifycms.com)
-
-🪲 bugs & comments [github](https://github.com/mortendk/saga11)
+We believe that there’s a strong bond between the heavy metal scene and the tattoo industry and we want to enforce that alliance. We believe there’s a certain magic in
+the heavy metal environment that is inclusive and loving, understanding and caring, and we want to take that with us in all the endeavors Graven will participate in. We are currently hosting two conventions but are also striving towards having our shop around various metal festivals and concerts to spread the message of Graven and its great love for the metal culture.

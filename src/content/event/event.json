@@ -1,0 +1,4 @@
+{
+  "permalink": "event/{{ title | slugify }}/",
+  "tags": "contentfolderevents"
+}

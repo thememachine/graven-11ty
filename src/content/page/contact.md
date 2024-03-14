@@ -1,5 +1,5 @@
 ---
-title: Contact
+title: Booking
 url: contact
 image: ""
 components:
@@ -20,19 +20,21 @@ components:
         title: Email
         placeholder: Email
       - type: options
-        inputtype: Dropdown
-        required: false
-        title: Dropdown
+        inputtype: Radio
+        required: true
+        title: Artist
         option:
-          - checked: true
-            title: this is a second option
           - checked: false
-            title: This is the default value
+            title: David
+          - checked: true
+            title: Thomas
+          - checked: false
+            title: Rasmus
       - type: textarea
         title: Message
         required: true
       - type: button
-        title: Send
+        title: Go Go Lucifer
         resettitle: Reset
         reset: true
     text: |-
@@ -43,7 +45,9 @@ layout: page/page.liquid
 date: 2023-06-21 20:03:22
 eleventyExcludeFromCollections: false
 eleventyNavigation:
-  title: Contact
-  parent: footer
+  title: Booking
+  parent: main
   order: 20
 ---
+For booking please use this form. 
+

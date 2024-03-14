@@ -1,15 +1,14 @@
 {
-  "errorpage": "404 error page yo",
-  "footer": "Footer text ",
-  "humantxt": "humans ?",
+  "errorpage": "404 NEJ !",
+  "footer": "Graven",
   "address": {
-    "name": "Saga 11",
-    "street": "Enghave Plads",
-    "zip": "1670",
+    "name": "Graven Tattoo Copenhagen",
+    "street": "Arkonagade 15, kl th",
+    "zip": "1726",
     "country": "Denmark",
-    "phone": "+45 12 34 56 78",
-    "url": "https://saga11.dev",
-    "email": "ragnar@saga11.dev",
-    "locality": " København V"
+    "phone": "+45 60646974",
+    "url": "https://graven.dk",
+    "email": "graven@graven.dev",
+    "locality": "Copenhagen v"
   }
 }

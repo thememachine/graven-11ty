@@ -4,7 +4,7 @@
   "description": "Website builder based on 11ty & Decap CMS",
   "main": "eleventy.config.js",
   "config": {
-    "theme": "theme-grunn",
+    "theme": "theme-graven",
     "dateLocalize": "Da",
     "timeZone": "Europe/Copenhagen"
   },

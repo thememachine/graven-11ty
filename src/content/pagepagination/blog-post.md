@@ -1,5 +1,5 @@
 ---
-title: Posts
+title: Rumours from the grave
 pagination:
   size: 15
   alias: contentcollection
@@ -11,10 +11,11 @@ image: ""
 order: 1
 eleventyExcludeFromCollections: false
 eleventyNavigation:
-  title: Post
+  title: Rumours
   parent: main
   icon: popcorn.svg
-  text: Blög og skriverier
+  text: Rumours from belov
+  order: 50
 seo:
   index: index
   follow: nofollow
