@@ -1,0 +1,4 @@
+{
+  "permalink": "artist/{{ url | slugify }}/",
+  "tags": "contentfolderartist"
+}

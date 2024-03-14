@@ -4,8 +4,8 @@ url: contact
 image: ""
 components:
   - type: form
-    title: "Contact form "
-    name: contact
+    title: Booking
+    name: Booking
     action: /contact/thanx
     template: components/form/form.liquid
     elements:

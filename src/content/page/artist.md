@@ -1,14 +1,13 @@
 ---
 title: Artist
 url: artist
-image:
-  - /content/upload/graven.jpg
+image: ""
 components:
   - type: collection
     order: data.order
     size: "10"
     template: components/collection/collection.liquid
-    collection: contentfolderpages
+    collection: contentfolderartist
 order: 1
 eleventyExcludeFromCollections: false
 eleventyNavigation:
