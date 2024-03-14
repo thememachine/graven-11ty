@@ -1,0 +1,4 @@
+{
+  "permalink": "notification/{{ title | slugify }}/",
+  "layout": "notification/notification.liquid"
+}

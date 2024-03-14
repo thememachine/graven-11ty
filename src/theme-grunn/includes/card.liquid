@@ -1,0 +1,54 @@
+{% comment %}
+{% assign image = card.image | default: image %}
+{% assign title = card.title | default: title %}
+{% assign text = card.text | default: text | truncatewords: "20",  " ..."  %}
+{%
+  render 'card.liquid',
+    title: title,
+    text: text,
+    image: image,
+    url: url,
+    date: page.date
+%}
+
+{%
+    render 'card',
+    title: item.data.card.title,
+    text: item.data.card.text,
+    image: item.data.card.image,
+    url: item.url,
+    date: item.date
+  %}
+{% endcomment %}
+{%- if env.mode != 'prod' %}<!-- 👋 src/theme-grunn/includes/card.liquid -->{%- endif -%}
+<article aria-label="Post {{ title}}">
+
+  <a href="{{ url }}" title="{{ title }}" tabindex="0">
+
+  <div class="shadow-lg aspect-video w-full overflow-hidden bg-tone-100">
+    {% if image %}
+      {% include 'image/image.liquid',
+          file: image,
+          sizes: "(min-width: 30em) 50vw, 100vw",
+          widths: "640, 1200",
+          format: "webp",
+          loading: loading | default: 'lazy',
+          css: "w-full"
+      %}
+    {% endif %}
+  </div>
+
+  <div class="shadow border dark:border-none rounded px-4 py-2 border-gray-100 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+    <h2 class="mt-2 text-2xl dark:text-cyan-200">{{ title }}</h2>
+
+    <div class="mt-2 line-clamp-3">
+      {{ text }}
+    </div>
+    {% if date %}
+      <div class="pt-2 text-tone-600 text-right">
+        {{ date | dateformat: dateLocalize, "long" }}
+        {{ date | date: "%H:%M" }}
+      </div>
+    {% endif %}
+  </a>
+</article>

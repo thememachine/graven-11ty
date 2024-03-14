@@ -1,0 +1,9 @@
+      - name: card
+        label: 🃏 Card (used for teasers)
+        widget: object
+        collapsed: true
+        summary: "{% raw %}Title: '{{fields.title}}' | Image: {{fields.image}} | Text: '{{fields.text}}'{% endraw %}"
+        fields:
+          - { label: "title", name: "title", widget: "string", required: false }
+          - { label: "Image", name: "image", widget: "image", required: false, choose_url: true }
+          - { label: "Text", name: "text", widget: "text", required: false }

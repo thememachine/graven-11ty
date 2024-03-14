@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  x-data="{ darkMode: localStorage.getItem('themeDarkMode') == 'true' }"
+  x-init="$watch('darkMode', val => localStorage.setItem('themeDarkMode', val))"
+  x-bind:class="{ 'dark': darkMode }"
+  class="scroll-smooth"
+>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="{{ eleventy.generator }}">
+
+    {{ verification.header  }}
+
+    {% comment %} Google {% endcomment %}
+    {%- if verification.google_site_verification %}
+      <meta name="google-site-verification" content="{{ verification.google_site_verification }}" />
+    {% endif -%}
+
+    {% comment %}Mastodon {% endcomment %}
+    {%- if verification.mastodon_verification %}
+      <link rel="me" href="{{ verification.mastodon_verification }}">
+    {% endif -%}
+
+    {% comment %} Github {% endcomment %}
+    {%- if verification.github_verification %}
+      <link rel="me" href="{{ verification.github_verification }}">
+    {% endif =%}
+
+    {% comment %}pinterest {% endcomment %}
+    {%- if verification.pinterest_verification %}
+      <meta name="p:domain_verify" content="{{ verification.pinterest_verification }}" />
+    {% endif -%}
+
+    {% comment %} SEO {% endcomment %}
+    {% assign seocanonical = page.url | prepend: env.url  %}
+    {% assign seodescription = seo.description | default: opengraph.description | default: card.text | default: site.description  %}
+    <meta name="description" content="{{ seodescription }}">
+    <link rel="canonical" href="{{ seocanonical }}" />
+    <meta name=”robots” content="{{ seo.index | default: "index" }}, {{ seo.follow | default: "nofollow" }}">
+
+    {% comment %}
+      icons & manifest
+      All files get generated when webminfest gets created
+    {% endcomment %}
+    <meta name="theme-color" content="{{ site.color }}">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    {% comment %} OPENGRAPH {% endcomment %}
+    {% assign ogImage = opengraph.image | default: site.opengraph %}
+    {% assign ogTitle = opengraph.title | default: title  %}
+    {% assign ogText =  opengraph.description | default: site.description %}
+
+    {%- render "_system/head/opengraph.liquid",
+      title: ogTitle,
+      description: ogText,
+      image: ogImage,
+      url: page.url,
+      site: site,
+      env: env,
+      some: some
+    -%}
+
+    {%- if env.mode == 'prod' %}
+      <link href="{{ '/assets/css/style.min.css' | url }}" rel="stylesheet">
+    {% else %}
+      <link href="{{ '/assets/css/style.css' | url }}" rel="stylesheet">
+    {% endif -%}
+
+    {% comment %}title {% endcomment %}
+    {% if page.url == "/" %}
+      <title>{{ seo.title | default: site.title }}</title>
+    {% else %}
+      <title>{{ seo.title | default: title }} | {{ site.title }}</title>
+    {% endif %}
+
+  </head>
+
+  {{ content }}
+
+  {% comment %}Service worker{% endcomment %}
+  <script>
+    if (navigator && navigator.serviceWorker) {
+      navigator
+        .serviceWorker
+        .register('/service-workers.js');
+    }
+  </script>
+
+    <script src="/assets/js/alpine-intersect.min.js" defer></script>
+    <script src="/assets/js/alpine-persist.min.js" defer></script>
+    <script src="/assets/js/alpine3.13.7.min.js" defer></script>
+
+  </body>
+</html>

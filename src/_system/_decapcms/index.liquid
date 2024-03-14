@@ -1,0 +1,134 @@
+---
+title: Admin
+permalink: /admin/index.html
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{site.title }} | {{ title }}</title>
+</head>
+
+<body>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <style>
+    /* Workaround for text editor https://github.com/decaporg/decap-cms/issues/5092 */
+    textarea {
+      -webkit-user-modify: read-write !important;
+    }
+    [data-slate-editor] {
+      -webkit-user-modify: read-write !important;
+    }
+
+    </style>
+
+  <script>
+    CMS.registerPreviewStyle("style.css");
+
+    // COMPONENTS
+    CMS.registerEditorComponent(
+      {
+      id: "shortcode-image",
+      label: "Shortcode: image",
+      collapsed: true,
+      fields: [
+        {
+          name: 'image',
+          label: 'image',
+          widget: 'image',
+          choose_url: true
+        },
+        {
+          name: 'alt',
+          label: 'alt',
+          widget: 'string'
+        },
+        {
+          name: 'widths',
+          label: 'widths',
+          widget: 'string',
+          default: '640',
+          required: true,
+          hint: 'widths can be set as an array ex: 400, 800, 1200'
+        }
+      ],
+      pattern: /^{\% render "image.liquid" file:"(.*?)", alt:"(.*?)", widths:"(.*?)" \%}$/ms,
+      fromBlock: function (match) {
+        return {image: match[1], alt: match[2],widths: match[3]};
+      },
+      toBlock: function (data) {
+        return `\{\% render "image.liquid" file:"${data.image}", alt:"${data.alt}", widths:"${data.widths}" \%\}`;
+      },
+      toPreview: function (data) {
+        return `\{\% render "image.liquid" file:"${data.image}", alt:"${data.alt}"  \%\}`;
+      }
+    }
+    );
+
+
+  CMS.registerEditorComponent({
+    // Internal id of the component
+    id: "video",
+    // Visible label
+    label: "Video html5",
+    fields: [
+      {
+        name: 'file',
+        label: 'file',
+        widget: 'file'
+      }
+    ],
+    pattern: /^<video controls><source src="(.*?)"><\/video>$/ms,
+    fromBlock: function(match) {
+      return {
+        file: match[1]
+      };
+    },
+    toBlock: function(data) {
+      return `<video controls><source src="${data.file}"><\/video>`;
+    },
+    toPreview: function(data) {
+      return `<video controls><source src="${data.file}"><\/video>`;
+    }
+  });
+
+
+  CMS.registerEditorComponent({
+    // Internal id of the component
+    id: "liquidcodeblock",
+    // Visible label
+    label: "Liquid Code",
+    fields: [
+      {
+          name: 'title',
+          label: 'title',
+          widget: 'string'
+        },
+
+      {
+        name: 'liquid',
+        label: 'liquid',
+        widget: 'text'
+      }
+    ],
+    pattern: /^(.*?)```liquid{% raw %}(.*?){% endraw %}```$/ms,
+    fromBlock: function(match) {
+      return {title: match[1], code: match[2]};
+    },
+    toBlock: function(data) {
+      return `${date.title}\`\`\`liquid\n{\% raw \%}\n${data.code}\n{\% endraw \%}\n\`\`\``;
+    },
+    toPreview: function(data) {
+      return `${date.title}\`\`\`liquid\n{\% raw \%}\n${data.code}\n{\% endraw \%}\n\`\`\``;
+    }
+  });
+
+
+  </script>
+
+</body>
+</html>

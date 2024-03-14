@@ -1,0 +1,4 @@
+{
+  "layout": "styleguide.liquid",
+  "permalink": "styleguide/{{ title | slugify }}/"
+}

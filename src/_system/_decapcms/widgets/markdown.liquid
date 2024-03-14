@@ -1,0 +1,24 @@
+      - label: "👩‍💻 {{ label }}"
+        name: "{{ name }}"
+        widget: "markdown"
+        buttons:
+          - link
+          - bold
+          - italic
+          - code
+          - heading-two
+          - heading-three
+          - code
+          - quote
+          - bulleted-list
+        editor_components:
+          - image
+          - video
+          - liquidcodeblock
+          - code-block
+        {% if required %}required: {{ required }}{% endif %}
+        {% if hint %}hint: {{ hint }}{% endif %}
+        {% if default %}default: {{ default }}{% endif %}
+          {% comment %}
+  - shortcode-image
+{% endcomment %}

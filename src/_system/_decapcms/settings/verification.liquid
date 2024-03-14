@@ -1,0 +1,30 @@
+      - label: "✅ Verification & Scripts"
+        name: "verification"
+        file: "src/content/_data/verification.json"
+        fields:
+          - {label:  ✅ Google site Verification (content="code"),
+              name: google_site_verification,
+              widget: string,
+              required: false,
+              hint: "verification tag https://support.google.com/webmasters/answer/9008080?hl=en#meta_tag_verification",
+            }
+          - {label: 🐘 ✅ mastodon Verification (rel="me"),
+              name: mastodon_verification,
+              widget: string,
+              required: false,
+              hint: "The complete url (ex: https://fosstodon.org/@saga11) Used for mastodon verification ",
+            }
+          - {label: 👋 Github Verification (rel="me"),
+              name: github_verification,
+              widget: string,
+              required: false,
+              hint: "The complete url (ex: https://github.com/[name]) used for indieauth.com",
+            }
+          - {
+              label: 📍 Pinterest verification,
+              name: pinterest_verification,
+              widget: string,
+              required: false,
+              hint: "can be found on https://www.pinterest.dk/settings/claim",
+            }
+          - { label: 👾 Header (tracking scripts), name: header, widget: text, required: false, hint: "Data block placed inside the header tag ex for tracking scripts" }

@@ -1,0 +1,15 @@
+{
+  "errorpage": "404 error page yo",
+  "footer": "Footer text ",
+  "humantxt": "humans ?",
+  "address": {
+    "name": "Saga 11",
+    "street": "Enghave Plads",
+    "zip": "1670",
+    "country": "Denmark",
+    "phone": "+45 12 34 56 78",
+    "url": "https://saga11.dev",
+    "email": "ragnar@saga11.dev",
+    "locality": " København V"
+  }
+}

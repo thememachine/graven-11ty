@@ -1,0 +1,4 @@
+{%- if file -%}
+{% assign width = widths | split: ', ' %}
+{%- imageurl file, width, format -%}
+{%- endif -%}

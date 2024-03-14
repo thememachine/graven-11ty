@@ -1,0 +1,36 @@
+---
+permalink: /manifest.webmanifest
+eleventyExcludeFromCollections: true
+---
+{
+  "name": "{{ site.title }}",
+  "short_name": "{{ site.shortname }}",
+  "start_url": "./",
+  "scope": "/",
+  "display": "{{ site.display | default: "standalone" }}",
+  "background_color": "{{ site.color }}",
+  "theme_color": "{{ site.color }}",
+  "description": "{{ site.description | strip_newlines }}",
+  "icons": [
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
+    {%- if site.maskableicon -%}
+    ,
+    {
+      "src": "/maskable-icon.png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+    {%- endif -%}
+  ]
+}
+
+{% comment %} Generates the icons {% endcomment %}
+{% assign icon  = site.icon | default: '_system/icon.svg'  %}
+{% assign touchicon  = site.touchicon | default: '_system/icon.png'  %}
+{% assign maskableicon  = site.maskableicon | default: '_system/icon.png'  %}
+{%- imagefavicon icon, 512, 'icon-512.png' -%}
+{%- imagefavicon icon, 192, 'icon-192.png' -%}
+{%- imagefavicon icon, 32, 'favicon.ico', ico -%}
+{%- imagefavicon touchicon, 180, 'apple-touch-icon.png' -%}
+{%- imagefavicon maskableicon, 512, 'maskable-icon.png' -%}

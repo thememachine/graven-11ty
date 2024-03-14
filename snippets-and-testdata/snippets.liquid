@@ -1,0 +1,54 @@
+{% comment %} card {% endcomment %}
+{% assign cardimage = card.image | default: image %}
+{% assign cardtitle = card.title | default: title %}
+{% assign cardtext = card.text | default: text | truncatewords: "20",  " ..."  %}
+{%
+  render 'card.liquid',
+    title: cardtitle,
+    text: cardtext,
+    image: cardimage,
+    url: url,
+    date: page.date
+%}
+
+{% comment %} image {% endcomment %}
+{% if image %}
+  {% render 'image/image.liquid',
+    file: image,
+    alt: title,
+    sizes: "(min-width: 30em) 50vw, 100vw",
+    widths: "640,1024,1563",
+    format: "webp",
+    loading: "lazy",
+    css: "w-full"
+  %}
+{% endif %}
+
+{% if image %}
+  {% render 'image/image.liquid', file: image, widths: "640" %}
+{% endif %}
+
+{% comment %} Link list {% endcomment %}
+{% include "linklist/linklist.liquid", collection : collections.allPages, url: url %}
+
+{% comment %} Pre next collection {% endcomment %}
+{% assign previous = collections.copenhellshows | getPreviousCollectionItem %}
+{% assign next =    collections.copenhellshows | getNextCollectionItem %}
+{% render 'prenext/prenext.liquid',
+      previous: previous,
+      next: next,
+      pretext: previous.data.show.object.title,
+      nexttext: next.data.show.object.title,
+%}
+
+{% comment %} Date{% endcomment %}
+week: {{ component.date_start | weekday: dateLocalize, "long" | capitalize }}
+month: {{ component.date_start | month: dateLocalize, "long" | capitalize }}
+format: {{ component.date_start | dateformat: dateLocalize, "full" | capitalize }}
+long: {{ component.date_start | dateformat: dateLocalize, "long" | capitalize }}
+medium: {{ component.date_start | dateformat: dateLocalize, "medium" | capitalize }}
+short: {{ component.date_start | dateformat: dateLocalize, "short" | capitalize }}
+
+{{ date | dateformat: dateLocalize, "short" }}
+{{ date | date: "%H:%M" }}
+

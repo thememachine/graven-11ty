@@ -1,0 +1,4 @@
+{
+  "permalink": "menuitem/{{ page.filePathStem }}.html",
+  "layout": "page/page.liquid"
+}
