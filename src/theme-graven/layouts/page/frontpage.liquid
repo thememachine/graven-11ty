@@ -5,15 +5,15 @@ saga-template-name: Frontpage
 {%- if env.mode != 'prod' %}<!-- 👋 sections src/theme-grunn/layouts/page/frontpage.liquid -->{%- endif -%}
 
 
-<article class="flex flex-col md:flex-row justify-between">
+<article class="">
 
   <div class="w-full aspect-video overflow-hidden">
-    {% if image %}
-      <div class="animation-kenburns h-full bg-no-repeat bg-cover"
-          style="background-image: url({% render 'image/imageurl.liquid', file: image, widths: "1024" %})"
-          >
-      </div>
-    {% endif %}
+
+  <video width="480" height="480"  autoplay="true" loop="true" class="w-full">
+    <source src="content/upload/tattoo.mov" type="video/mp4" >
+  </video>
+
+
   </div>
 
   {% comment %} {% if image %}
@@ -30,7 +30,7 @@ saga-template-name: Frontpage
     </div>
   {% endif %} {% endcomment %}
 
-  <div class="prose prose-xl dark:prose-invert mt-4 md:mt-0 md:ml-4 p-4 bg-white rounded-md shadow-md dark:bg-gray-700">
+  <div class="text-lg w-4/6">
     {{ content }}
   </div>
 </article>

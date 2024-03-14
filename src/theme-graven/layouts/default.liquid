@@ -4,7 +4,7 @@ layout: html.liquid
 {%- if env.mode != 'prod' %}<!-- ___layouts/default.liquid  -->{%- endif -%}
 {% comment %}isModalOpen is used to test if theres a modal open then disable the scroll {% endcomment %}
 <body
-  class="flex flex-col h-screen bg-slate-200 text-gray-900 dark:bg-slate-800 dark:text-gray-50"
+  class="flex flex-col h-screen bg-stone-950 text-stone-100"
   x-data="{'isModalOpen': false, isEditvisible: false, openmenu: false}"
   x-on:keydown.escape="isModalOpen=false"
   x-on:keydown.cmd.shift.e="isEditvisible = ! isEditvisible"
@@ -12,8 +12,8 @@ layout: html.liquid
 >
 
   {%- include "header.liquid" %}
-
-  <main id="main" tabindex="-1" class="pagewidth flex-grow mt-4 focus-visible:outline-0">
+  {% comment %} pagewidth {% endcomment %}
+  <main id="main" tabindex="-1" class="flex-grow focus-visible:outline-0">
     {{ content }}
   </main>
 

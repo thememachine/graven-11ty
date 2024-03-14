@@ -4,9 +4,7 @@ saga-template-name: Page default
 ---
 {%- if env.mode != 'prod' %}<!-- 👋 sections src/theme-grunn/layouts/page/page.liquid -->{%- endif -%}
 
-<h1 class="text-5xl">{{ title }}</h1>
-
-{% include "tag/tags.liquid" %}
+<h1 class="text-5xl pagewidth">{{ title }}</h1>
 
 {% if image %}
   <div class="aspect-video overflow-hidden">
@@ -22,13 +20,10 @@ saga-template-name: Page default
   </div>
 {% endif %}
 
-<div class="prose mx-auto">
+<div class="pagewidth">
   {{ content }}
+  {% include "components/all.liquid" %}
+  {% include "some/share.liquid" %}
 </div>
-
-
-{% include "components/all.liquid" %}
-
-{% include "some/share.liquid" %}
 
 
