@@ -67,6 +67,23 @@
   hint: "alt text"
 %}
 
+{% include "_system/_decapcms/widgets/string",
+  name: "name",
+  label: "name",
+  default: "",
+  required: true,
+  hint: ""
+%}
+
+{% include "_system/_decapcms/widgets/string",
+  name: "instagram",
+  label: "instagram username",
+  default: "",
+  required: false,
+  hint: "uden instagram.com"
+%}
+
+
 {% include "_system/_decapcms/widgets/markdown.liquid",
   name: "body",
   label: "Body",

@@ -6,21 +6,10 @@ saga-template-name: Page pagination
   yeah masonry !
 {% endcomment %}
 
-<div class="bg-tone-100 py-12">
-
-  <h1
-    class="
-    text-7xl lg:text-9xl pagewidth
-    font-display pagewidth break-words
-    bg-gradient-to-r from-cyan-400 to-indigo-600 bg-clip-text text-transparent"
-    id="top">
-    {{ title }}
-  </h1>
+<div class="pt-12">
+  <h1 class=" text-7xl lg:text-9xl pagewidth" id="top">{{ title }}</h1>
 </div>
-{% comment %}
 
-<section class="pagewidth pt-8 gap-2 columns-2 lg:gap-4 lg:columns-4">
-{% endcomment %}
 <section class="pagewidth grid grid-cols-1 lg:grid-cols-3 gap-3">
 
 {% assign all = contentcollection | sort: "date" | reverse  %}

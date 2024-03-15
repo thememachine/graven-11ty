@@ -2,23 +2,11 @@
 layout: default.liquid
 saga-template-name: Post Default
 ---
-
 {%- if env.mode != 'prod' %}<!-- ___layouts/post/post.liquid  -->{%- endif -%}
 
-<article class="flex flex-col md:flex-row space-x-8">
+<article class="flex flex-col md:flex-row space-x-8 pagewidth">
   <div class="md:w-4/6">
-
-    <h1 class="pb-4 text-6xl dark:text-cyan-200">{{ title }}</h1>
-
-    <div class="py-4 text-tone-500 flex flex-row items-center space-x-2">
-      <div>{{ date | dateformat: dateLocalize, "long" }}</div>
-      <div>{{ date | date: "%H:%M" }}</div>
-      <div>{{ author }}</div>
-      <div>
-        {% include "tag/tags.liquid" %}
-      </div>
-      </div>
-
+    <h1 class="text-6xl py-4 text-center">{{ title }}</h1>
 
   {% if image %}
     <div class="aspect-video overflow-hidden shadow-lg">
@@ -35,7 +23,6 @@ saga-template-name: Post Default
   {% endif %}
 
 
-
     <div class="prose prose-xl dark:prose-invert max-w-full">
       {{ content }}
     </div>
@@ -46,7 +33,7 @@ saga-template-name: Post Default
     {% include "linklist/linklist.liquid",
         collection : collections.contentfolderposts,
         url: page.url,
-        limit: 3,
+        limit: 20,
         sort: "data.title",
         showdate: true
     %}
@@ -63,6 +50,16 @@ saga-template-name: Post Default
     {% include "tag/tagcloud.liquid" %}
 
     {% include "some/share.liquid" %}
+
+
+    <div class="py-4 text-tone-500 flex flex-row items-center space-x-2">
+      <div>{{ date | dateformat: dateLocalize, "long" }}</div>
+      <div>{{ date | date: "%H:%M" }}</div>
+      <div>{{ author }}</div>
+      <div>
+        {% include "tag/tags.liquid" %}
+      </div>
+    </div>
 
   </div>
 </article>

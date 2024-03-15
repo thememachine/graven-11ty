@@ -1,5 +1,5 @@
 ---
-title: Artist
+title: Meet the regular outlaws of Graven
 url: artist
 image: ""
 components:
@@ -19,4 +19,6 @@ seo:
   follow: nofollow
 layout: page/page.liquid
 ---
-Meet the regular artists, and our regular guests artists. Join the mailing list to be updated when we have visitors in Graven. 
+Meet the regular artists, and our regular guests artists. 
+
+Join the mailing list to be updated when we have visitors in Graven. 
