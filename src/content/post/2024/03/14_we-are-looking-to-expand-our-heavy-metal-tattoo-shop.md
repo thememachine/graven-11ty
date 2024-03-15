@@ -2,6 +2,8 @@
 title: " We are looking to expand our heavy metal tattoo shop "
 image:
   - /content/upload/gravenogol.png
+tags:
+  - rssfeed
 created: 2024-03-14 22:53:46
 order: 1
 eleventyExcludeFromCollections: false

@@ -1,7 +1,7 @@
 ---
-title: David
-url: david
-image: /content/upload/default.png
+title: Grave Dave
+url: grave-dave
+image: /content/upload/Dave.webp
 order: 1
 eleventyExcludeFromCollections: false
 seo:
@@ -9,3 +9,7 @@ seo:
   follow: nofollow
 layout: page/page.liquid
 ---
+Grave Dave
+David Jakobsen
+
+Dave is the ruler of dark illustrative designs, and lettering worthy of any blackmetal band. 

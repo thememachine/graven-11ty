@@ -1,7 +1,8 @@
 ---
 title: Booking
-url: contact
-image: ""
+url: booking
+image:
+  - /content/upload/gravenogol.png
 components:
   - type: form
     title: Booking
@@ -40,6 +41,8 @@ components:
     text: |-
       Y﻿ou can totally contact us :)
       t﻿ext with stuff on it
+tags:
+  - graven
 order: 1
 layout: page/page.liquid
 date: 2023-06-21 20:03:22
