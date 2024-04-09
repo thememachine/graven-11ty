@@ -1,5 +1,6 @@
 ---
 title: Graven
 link: https://graven.dk
-image: ""
+image:
+  - /content/upload/graven.jpg
 ---

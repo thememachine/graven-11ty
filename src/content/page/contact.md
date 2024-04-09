@@ -51,6 +51,7 @@ eleventyNavigation:
   title: Booking
   parent: main
   order: 20
+  key: booking
 ---
 For booking please use this form. 
 
